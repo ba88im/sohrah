@@ -1,6 +1,6 @@
 ## About 
 
-This take-home project involves developing a simplified version of Factory's 'Project Droid,' an AI-powered system designed to transform high-level task titles into detailed, well-scoped software engineering tickets
+This take-home project involves developing a simple calorie tracker
 
 ## Running locally in development mode
 
