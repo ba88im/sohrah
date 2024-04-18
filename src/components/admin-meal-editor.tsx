@@ -13,9 +13,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import toast from 'react-hot-toast';
 
-export function MealEditDialog({ meal, onSave, onCancel }) {
-    const [mealType, setMealType] = useState(null);
-    const [calories, setCalories] = useState(null);
+export function MealEditDialog({ meal, onSave, onCancel }: { meal: any; onSave: any; onCancel: any }) {
+    const [mealType, setMealType] = useState(''); 
+    const [calories, setCalories] = useState('');
 
   
 

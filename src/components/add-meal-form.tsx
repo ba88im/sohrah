@@ -21,25 +21,25 @@ const mealConfig = {
 
 export function AddMealForm() {
   const [mealType, setMealType] = useState('breakfast');
-  const { register, handleSubmit, watch, setValue, reset, formState } = useForm({
+  const { register, handleSubmit, watch, setValue, reset, getValues, formState } = useForm({
     defaultValues: {
-      mealType: 'breakfast',
-      dateTime: '',
-      entries: Array(mealConfig.breakfast).fill({ foodName: '', calories: 0 })
+       mealType: 'breakfast',
+       dateTime: '',
+       entries: Array(mealConfig.breakfast).fill({ foodName: '', calories: 0 })
     }
-  });
-
+   });
+   
   // Watch the `mealType` and `entries`
   const dateTime = watch('dateTime');
   const entries = watch('entries');
 
   // Update entries when mealType changes
   useEffect(() => {
-    const newEntries = Array(mealConfig[mealType]).fill({ foodName: '', calories: 0 });
-    reset({ ...formState.values, entries: newEntries }); // Preserve other form values
-  }, [mealType, reset, formState.values]);
-
-  const onSubmit = async (data) => {
+    const newEntries = Array(mealConfig[mealType as keyof typeof mealConfig]).fill({ foodName: '', calories: 0 });
+    reset({ ...getValues(), entries: newEntries }); // Use getValues to get all form values
+  }, [mealType, reset, getValues]); // Corrected dependency array
+       
+  const onSubmit = async (data: { mealType: string; dateTime: string; entries: { foodName: string; calories: number }[] }) => {
     // Format the data to match the expected API structure
     const formattedData = {
       ...data,
