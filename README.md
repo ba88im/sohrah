@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## About 
 
-## Getting Started
+This take-home project involves developing a simplified version of Factory's 'Project Droid,' an AI-powered system designed to transform high-level task titles into detailed, well-scoped software engineering tickets
 
-First, run the development server:
+## Running locally in development mode
+
+To get started, just clone the repository and run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+    git clone https://github.com/ba88im/sohrah
+    cd sohrah
+    npm install
+    npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuring
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To configure just copy '.env.example' over to '.env' and fill in the options.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- OPENAI_API_KEY can be created [here](https://platform.openai.com/api-keys) 
+- NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY, CLERK_SECRET_KEY are found when creating a new clerk account
+- DATABASE_URL can be created [here](https://neon.tech/docs/manage/api-keys)
 
-## Learn More
+## Demo
 
-To learn more about Next.js, take a look at the following resources:
+Demo for the project can be found [here](https://www.youtube.com/watch?v=n3R1Pa8mXnw). 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
