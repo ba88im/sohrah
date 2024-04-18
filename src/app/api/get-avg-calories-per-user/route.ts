@@ -7,30 +7,30 @@ import { avg } from "drizzle-orm";
 export async function GET(req: Request, res: Response) {
     try {
         // Calculate the average calories for all meals in the database
-        const result = await db
-            .select(avg(meals.calories).as('avgCalories'))
-            .from(meals);
+        // const result = await db
+        //     .select(avg(meals.calories).as('avgCalories'))
+        //     .from(meals);
 
-        // Extract the average calories value
-        const avgCalories = result[0].avgCalories;
+        // // Extract the average calories value
+        // const avgCalories = result[0].avgCalories;
 
-        // Assuming you have a way to fetch all user IDs
-        const users = await db
-        .select()
-        .from(meals)
-        .where(userId)
+        // // Assuming you have a way to fetch all user IDs
+        // const users = await db
+        // .select()
+        // .from(meals)
+        // .where(userId)
 
-        // Create an array with average calories for each user
-        const avgCaloriesPerUser = users.map(user => ({
-            userId: user.userId,
-            avgCalories: avgCalories
-        }));
+        // // Create an array with average calories for each user
+        // const avgCaloriesPerUser = users.map(user => ({
+        //     userId: user.userId,
+        //     avgCalories: avgCalories
+        // }));
 
-        // Successful response
-        return NextResponse.json(
-            avgCaloriesPerUser,
-            { status: 200 }
-        );
+        // // Successful response
+        // return NextResponse.json(
+        //     avgCaloriesPerUser,
+        //     { status: 200 }
+        // );
 
     } catch (error) {
         console.error("Error calculating average calories: ", error);
